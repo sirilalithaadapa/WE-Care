@@ -1,0 +1,125 @@
+.services {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f6f6f6;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1.2em;
+    color: #242424;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    font-size: 1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #003366;
+}
+
+.left-arrow {
+    margin-right: 10px;
+}
+
+.right-arrow {
+    margin-left: 10px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    max-height: 200px;
+}
+
+.service-list.show-more {
+    max-height: 1000px;
+    /* Show all items when 'View More' is clicked */
+}
+
+.service {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    width: 180px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service .icon {
+    height: 50px;
+    margin-bottom: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.service h3 {
+    font-size: 0.9em;
+    /* Reduced font size */
+    color: #003366;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+.medical-gastro {
+    background-image: url('./gastro.png');
+}
+
+.surgical-gastro {
+    background-image: url('./surgical-gastro.png');
+}
+
+.hepatology {
+    background-image: url('./hepatology.png');
+}
+
+.cardiology {
+    background-image: url('./cardiology.png');
+}
+
+.cardiothoracic {
+    background-image: url('./cardiothoracic.png');
+}
+
+.neurosurgery {
+    background-image: url('./neurosurgery.png');
+}
+
+.view-more {
+    margin-top: 30px;
+}
+
+.view-more-button {
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more-button:hover {
+    background-color: #0055b3;
+}

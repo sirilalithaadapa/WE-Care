@@ -1,0 +1,93 @@
+/* Top banner styles */
+.top-banner {
+    background-color: #00264d;
+    /* Dark blue background */
+    color: #fff;
+    /* White text */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.top-banner a {
+    color: #f9a825;
+    /* Yellow text for link */
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust the height of your logo */
+    margin-right: 10px;
+}
+
+.navbar h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #004d99;
+    /* Dark blue color */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.appointment-button {
+    background-color: #00c853;
+    /* Green color */
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-button:hover {
+    background-color: #009624;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .appointment-button {
+        margin-top: 10px;
+    }
+}

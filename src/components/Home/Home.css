@@ -1,0 +1,47 @@
+/* Home.css */
+
+/* Styling for the home section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/src/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.home-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Adds a dark overlay to the text */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.home p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 2.5rem;
+    }
+
+    .home p {
+        font-size: 1.2rem;
+    }
+
+    .home-content {
+        padding: 20px;
+    }
+}
