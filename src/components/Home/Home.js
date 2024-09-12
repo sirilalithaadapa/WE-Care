@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
 import './Home.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // Importing images
 import slide1 from './hero-bg.png'; // Correct the path based on where your images are
