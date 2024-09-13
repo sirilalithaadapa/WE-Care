@@ -1,6 +1,7 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css'; // Import Awesome Slider CSS
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './AwardsAndTestimonials.css';
 import award1 from './award1.jpg';
 import award2 from './award2.jpg';
@@ -9,8 +10,7 @@ import patient1 from './patient1.jpg';
 import patient2 from './patient2.jpg';
 import patient3 from './patient3.jpg';
 
-const testimonials = [
-    {
+const testimonials = [{
         img: patient1,
         text: "The care I received at WECare was exceptional! The doctors and staff are friendly, and they helped me recover quickly.",
         name: "John Doe"
@@ -28,44 +28,75 @@ const testimonials = [
 ];
 
 const AwardsAndTestimonials = () => {
-    return (
-        <section className="awards-testimonials">
-            {/* Awards Section */}
-            <div className="awards">
-                <h2>Awards & Achievements</h2>
-                <div className="awards-list">
-                    <div className="award-item">
-                        <img src={award1} alt="Best Multispeciality Clinic" />
-                        <h3>Best Multispeciality Clinic 2023</h3>
-                        <p>Awarded for outstanding medical services and healthcare excellence.</p>
-                    </div>
-                    <div className="award-item">
-                        <img src={award2} alt="Healthcare Innovation Award" />
-                        <h3>Healthcare Innovation Award</h3>
-                        <p>Recognized for innovations in patient care and advanced medical treatments.</p>
-                    </div>
-                    <div className="award-item">
-                        <img src={award3} alt="Best Patient Satisfaction" />
-                        <h3>Best Patient Satisfaction</h3>
-                        <p>Awarded for maintaining high patient satisfaction and quality care.</p>
-                    </div>
-                </div>
-            </div>
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true
+    };
 
-            {/* Testimonials Section */}
-            <div className="testimonials">
-                <h2>Patient Testimonials</h2>
-                <AwesomeSlider>
-                    {testimonials.map((testimonial, index) => (
-                        <div key={index} className="testimonial-item">
-                            <img src={testimonial.img} alt={testimonial.name} className="testimonial-photo" />
-                            <p>"{testimonial.text}"</p>
-                            <h4>- {testimonial.name}</h4>
-                        </div>
-                    ))}
-                </AwesomeSlider>
-            </div>
-        </section>
+    return ( <
+        section className = "awards-testimonials" > { /* Awards Section */ } <
+        div className = "awards" >
+        <
+        h2 > Awards & Achievements < /h2> <
+        div className = "awards-list" >
+        <
+        div className = "award-item" >
+        <
+        img src = { award1 }
+        alt = "Best Multispeciality Clinic" / >
+        <
+        h3 > Best Multispeciality Clinic 2023 < /h3> <
+        p > Awarded
+        for outstanding medical services and healthcare excellence. < /p> <
+        /div> <
+        div className = "award-item" >
+        <
+        img src = { award2 }
+        alt = "Healthcare Innovation Award" / >
+        <
+        h3 > Healthcare Innovation Award < /h3> <
+        p > Recognized
+        for innovations in patient care and advanced medical treatments. < /p> <
+        /div> <
+        div className = "award-item" >
+        <
+        img src = { award3 }
+        alt = "Best Patient Satisfaction" / >
+        <
+        h3 > Best Patient Satisfaction < /h3> <
+        p > Awarded
+        for maintaining high patient satisfaction and quality care. < /p> <
+        /div> <
+        /div> <
+        /div>
+
+        { /* Testimonials Section */ } <
+        div className = "testimonials" >
+        <
+        h2 > Patient Testimonials < /h2> <
+        Slider {...settings } > {
+            testimonials.map((testimonial, index) => ( <
+                div key = { index }
+                className = "testimonial-item" >
+                <
+                img src = { testimonial.img }
+                alt = { testimonial.name }
+                className = "testimonial-photo" / >
+                <
+                p > "{testimonial.text}" < /p> <
+                h4 > -{ testimonial.name } < /h4> <
+                /div>
+            ))
+        } <
+        /Slider> <
+        /div> <
+        /section>
     );
 };
 

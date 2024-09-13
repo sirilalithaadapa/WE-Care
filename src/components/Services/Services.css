@@ -18,30 +18,13 @@
 
 .service-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.arrow {
-    font-size: 1em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #003366;
-}
-
-.left-arrow {
-    margin-right: 10px;
-}
-
-.right-arrow {
-    margin-left: 10px;
 }
 
 .service-list {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     max-height: 200px;
@@ -49,7 +32,6 @@
 
 .service-list.show-more {
     max-height: 1000px;
-    /* Show all items when 'View More' is clicked */
 }
 
 .service {
@@ -76,34 +58,9 @@
 
 .service h3 {
     font-size: 0.9em;
-    /* Reduced font size */
     color: #003366;
     margin-top: 10px;
     line-height: 1.2;
-}
-
-.medical-gastro {
-    background-image: url('./gastro.png');
-}
-
-.surgical-gastro {
-    background-image: url('./surgical-gastro.png');
-}
-
-.hepatology {
-    background-image: url('./hepatology.png');
-}
-
-.cardiology {
-    background-image: url('./cardiology.png');
-}
-
-.cardiothoracic {
-    background-image: url('./cardiothoracic.png');
-}
-
-.neurosurgery {
-    background-image: url('./neurosurgery.png');
 }
 
 .view-more {
@@ -122,4 +79,15 @@
 
 .view-more-button:hover {
     background-color: #0055b3;
+}
+
+
+/* Media query for mobile view */
+
+@media (max-width: 768px) {
+    .service-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
