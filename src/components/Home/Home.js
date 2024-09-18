@@ -36,8 +36,8 @@ const Home = () => {
         div className = "carousel-text" >
         <
         h1 > Welcome to WeCare Hospital < /h1> <
-        p > We provide high - quality healthcare services < /p> <
-        /div> <
+        p > We provide high - quality healthcare services < /p> < /
+        div > <
         /div> <
         div className = "carousel-slide" >
         <
@@ -48,8 +48,8 @@ const Home = () => {
         div className = "carousel-text" >
         <
         h1 > Welcome to WeCare Hospital < /h1> <
-        p > We provide high - quality healthcare services < /p> <
-        /div> <
+        p > We provide high - quality healthcare services < /p> < /
+        div > <
         /div> <
         div className = "carousel-slide" >
         <
@@ -60,10 +60,10 @@ const Home = () => {
         div className = "carousel-text" >
         <
         h1 > Welcome to WeCare Hospital < /h1> <
-        p > We provide high - quality healthcare services < /p> <
-        /div> <
-        /div> <
-        /Slider>
+        p > We provide high - quality healthcare services < /p> < /
+        div > <
+        /div> < /
+        Slider >
 
         { /* Information Boxes Section */ } <
         div className = "info-section" >
@@ -73,15 +73,15 @@ const Home = () => {
         i className = "fa fa-phone" > < /i> <
         h2 > Emergency Cases < /h2> <
         p > Please feel welcome to contact our staff with any general or medical enquiry.Call us: < /p> <
-        h3 > 7288944972 < /h3> <
-        /div> <
+        h3 > 7288944972 < /h3> < /
+        div > <
         div className = "info-box timetable" >
         <
         i className = "fa fa-calendar" > < /i> <
         h2 > Doctors Timetable < /h2> <
         p > Qualified doctors available six days a week.View our timetable to make an appointment. < /p> <
-        button className = "view-timetable-btn" > View Timetable < /button> <
-        /div> <
+        button className = "view-timetable-btn" > View Timetable < /button> < /
+        div > <
         div className = "info-box hours" >
         <
         i className = "fa fa-clock" > < /i> <
@@ -91,8 +91,8 @@ const Home = () => {
         li > Monday - Friday: 8: 00 AM - 7: 00 PM < /li> <
         li > Saturday: 9: 00 AM - 8: 00 PM < /li> <
         li > Sunday: 10: 00 AM - 9: 00 PM < /li> <
-        li > Emergency: 24 HR / 7 DAYS < /li> <
-        /ul> <
+        li > Emergency: 24 HR / 7 DAYS < /li> < /
+        ul > <
         /div> <
         div className = "info-box location" >
         <
@@ -105,14 +105,16 @@ const Home = () => {
         width = "100%"
         height = "150"
         style = {
-            { border: 0 } }
+            { border: 0 }
+        }
         allowFullScreen = ""
         loading = "lazy"
         title = "Hospital Location" >
-        < /iframe> <
-        /div> <
-        /div> <
-        /div> <
+        <
+        /iframe> < /
+        div > <
+        /div> < /
+        div > <
         /section>
     );
 };

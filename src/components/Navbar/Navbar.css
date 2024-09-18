@@ -22,7 +22,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #004d99;
+    /* Darker background to enhance logo contrast */
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -33,14 +34,24 @@
 }
 
 .logo img {
-    height: 40px;
+    height: 50px;
+    /* Increased size for prominence */
     margin-right: 10px;
+    border-radius: 50%;
+    /* Optional: Adds a rounded effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow to highlight the logo */
+    background-color: white;
+    /* Background to improve contrast */
+    padding: 5px;
+    /* Padding around the logo */
 }
 
 .navbar h1 {
     font-size: 1.5em;
     margin: 0;
-    color: #004d99;
+    color: #ffffff;
+    /* White text to match the navbar background */
 }
 
 .nav-links {
@@ -55,130 +66,15 @@
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
+    /* White links for better contrast */
     font-size: 1em;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #007bff;
-}
-
-.appointment-button {
-    background-color: #00c853;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.appointment-button:hover {
-    background-color: #009624;
-}
-
-
-/* Hamburger menu styles */
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-.nav-links.mobile {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #ffffff;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-}
-
-.nav-links.mobile.active {
-    display: flex;
-}
-
-
-/* Responsive styles */
-
-
-/* Top banner styles */
-
-.top-banner {
-    background-color: #00264d;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-}
-
-.top-banner a {
     color: #f9a825;
-    text-decoration: none;
-    margin-left: 5px;
-}
-
-
-/* Navbar styles */
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.navbar h1 {
-    font-size: 1.5em;
-    margin: 0;
-    color: #004d99;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1em;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #007bff;
+    /* Highlight links on hover */
 }
 
 .appointment-button {
@@ -206,7 +102,8 @@
 .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #fff;
+    /* White for visibility on dark navbar */
     margin: 5px 0;
     transition: 0.4s;
 }
@@ -223,14 +120,13 @@
     left: 0;
     height: 100vh;
     width: 70%;
-    background-color: #ffffff;
+    background-color: #1a3481;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 10;
     transition: transform 0.3s ease;
     transform: translateX(-100%);
     overflow-y: auto;
-    /* Ensures scrolling if content is longer than viewport */
 }
 
 .nav-links.mobile.active {
@@ -247,6 +143,8 @@
     cursor: pointer;
     font-size: 2em;
     margin-bottom: 20px;
+    color: #f9a825;
+    /* Same color as hover links */
 }
 
 
@@ -282,22 +180,18 @@
     .appointment-button {
         display: none;
     }
+    .navbar {
+        background-color: #003366;
+        /* Adjusted color for mobile */
+    }
+    .logo img {
+        height: 40px;
+        /* Reduced logo size for mobile */
+    }
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    .hamburger {
-        display: flex;
-    }
+@media (min-width: 769px) {
     .nav-links.mobile {
-        display: none;
-    }
-    .appointment-button {
-        display: none;
-    }
-    .appointment-button {
         display: none;
     }
 }
