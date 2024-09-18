@@ -1,0 +1,49 @@
+.meet-our-doctors {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.doctor-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.doctor-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.4rem;
+}
+
+p {
+    margin: 0.3rem 0;
+}
+
+
+/* Mobile View */
+
+@media only screen and (max-width: 600px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+    }
+}

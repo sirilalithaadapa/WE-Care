@@ -6,6 +6,8 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Testimonials from './components/Testimonials/Testimonials';
+import MeetourDoctors from './components/MeetourDoctors/MeetourDoctors';
+
 import './App.css';
 
 function App() {
@@ -19,9 +21,13 @@ function App() {
         <
         About / >
         <
+        MeetourDoctors / >
+
+        <
         Services / >
         <
         Testimonials / >
+
         <
         Contact / >
         <
