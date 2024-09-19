@@ -1,0 +1,71 @@
+.count-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+    /* Add top border to the entire section */
+    border-bottom: 2px solid #ddd;
+    /* Add bottom border to the entire section */
+}
+
+.count-box {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    /* Ensure relative positioning */
+    border-right: 2px solid #ddd;
+    /* Add right border to each box */
+}
+
+.count-box:last-child {
+    border-right: none;
+    /* Remove right border from the last box */
+}
+
+.count-icon {
+    font-size: 3rem;
+    /* Adjust icon size */
+    color: #aaa;
+    /* Grey color for the icons */
+    margin-bottom: 15px;
+}
+
+.count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    /* Red color for the numbers */
+}
+
+.count span {
+    font-size: 2.5rem;
+}
+
+.count-box p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .count-section {
+        flex-direction: column;
+        border: none;
+        /* Remove borders for mobile view */
+    }
+    .count-box {
+        width: 80%;
+        border: none;
+        /* Remove borders for mobile view */
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ddd;
+        /* Add bottom border to each box in mobile */
+    }
+    .count-box:last-child {
+        border-bottom: none;
+        /* Remove bottom border from last box in mobile */
+    }
+}

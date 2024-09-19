@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Testimonials from './components/Testimonials/Testimonials';
 import MeetourDoctors from './components/MeetourDoctors/MeetourDoctors';
+import CountSection from './components/CountSection/CountSection'; // Import the CountSection component
 
 import './App.css';
 
@@ -17,17 +18,15 @@ function App() {
         Navbar / >
         <
         Home / >
-
         <
         About / >
         <
+        CountSection / > { /* Add CountSection component here */ } <
         MeetourDoctors / >
-
         <
         Services / >
         <
         Testimonials / >
-
         <
         Contact / >
         <
