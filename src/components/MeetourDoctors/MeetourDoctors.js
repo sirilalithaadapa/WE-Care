@@ -2,8 +2,7 @@ import React from 'react';
 import './MeetourDoctors.css'; // Add your CSS for styling or use a CSS framework
 import doctor1Image from './Dr. Vijaya Sree.jpeg'; // Ensure the path is correct
 import doctor3Image from './dravinash.png'; // Ensure the path is correct
-
-import doctor2Image from './dravinash.png'; // Ensure the path is correct
+import doctor2Image from './Dr. Mahmood Pasha.jpg'; // Ensure the path is correct
 
 const doctorsData = [{
         name: "Dr. Vijaya Sri",

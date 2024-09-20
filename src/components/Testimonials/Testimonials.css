@@ -1,6 +1,7 @@
 .testimonials {
     padding: 50px;
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, #f38d5a, #f7ac86);
+    /* Updated with logo's gradient */
     font-family: Arial, sans-serif;
 }
 
@@ -9,6 +10,7 @@
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #21476d;
+    /* Updated to deep blue */
 }
 
 
@@ -17,7 +19,6 @@
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Two columns */
     gap: 20px;
     justify-content: start;
 }
@@ -46,7 +47,8 @@
 
 .testimonial-name {
     font-size: 1.2em;
-    color: #2c3e50;
+    color: #21476d;
+    /* Updated to deep blue */
     margin: 0;
 }
 

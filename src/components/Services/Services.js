@@ -1,73 +1,98 @@
 import React, { useEffect, useRef } from 'react';
 import './Services.css';
 
+// Import images (ensure images are placed in the public folder or imported correctly)
+import gastroImg from './gastro.png';
+import surgicalGastroImg from './surgical-gastro.png';
+import hepatologyImg from './hepatology.png';
+import cardiologyImg from './cardiology.png';
+import cardiothoracicImg from './cardiothoracic.png';
+import neurosurgeryImg from './neurosurgery.png';
+import pulmonologyImg from './pulmonologyImg.jpg';
+import oncologyImg from './oncology.png';
+import urologyImg from './urology.png';
+import nephrologyImg from './nephrology.png';
+import orthopedicsImg from './orthopedic.png';
+import rheumatologyImg from './rheumatologyImg.png';
+import gynecologyImg from './gynecology.png';
+import pediatricsImg from './pediatrics.png';
+import neurologyImg from './neurology.png';
+import psychiatryImg from './psychiatry.png';
+import endocrinologyImg from './endocriology.png';
+import dermatologyImg from './dermatology.png';
+
 const Services = () => {
     const scrollRef = useRef(null);
 
     const services = [
-        { name: "Medical Gastroenterology", iconClass: "medical-gastro", img: "./gastro.png" },
-        { name: "Surgical Gastroenterology", iconClass: "surgical-gastro", img: "/surgical-gastro-icon.png" },
-        { name: "Centre of Hepatology & Regenerative Medicine", iconClass: "hepatology", img: "/hepatology-icon.png" },
-        { name: "Cardiology", iconClass: "cardiology", img: "/cardiology-icon.png" },
-        { name: "Cardiothoracic Surgery", iconClass: "cardiothoracic", img: "/cardiothoracic-icon.png" },
-        { name: "Neurosurgery & Spine Surgery", iconClass: "neurosurgery", img: "/neurosurgery-icon.png" },
-        { name: "Pulmonology", iconClass: "pulmonology", img: "/pulmonology-icon.png" },
-        { name: "Oncology", iconClass: "oncology", img: "/oncology-icon.png" },
-        { name: "Urology", iconClass: "urology", img: "/urology-icon.png" },
-        { name: "Nephrology", iconClass: "nephrology", img: "/nephrology-icon.png" },
-        { name: "Orthopedics", iconClass: "orthopedics", img: "/orthopedics-icon.png" },
-        { name: "Rheumatology", iconClass: "rheumatology", img: "/rheumatology-icon.png" },
-        { name: "Obstetrics and Gynecology", iconClass: "gynecology", img: "/gynecology-icon.png" },
-        { name: "Pediatrics", iconClass: "pediatrics", img: "/pediatrics-icon.png" },
-        { name: "Neurology", iconClass: "neurology", img: "/neurology-icon.png" },
-        { name: "Psychiatry", iconClass: "psychiatry", img: "/psychiatry-icon.png" },
-        { name: "Endocrinology", iconClass: "endocrinology", img: "/endocrinology-icon.png" },
-        { name: "Dermatology", iconClass: "dermatology", img: "/dermatology-icon.png" }
+        { name: "Medical Gastroenterology", img: gastroImg },
+        { name: "Surgical Gastroenterology", img: surgicalGastroImg },
+        { name: "Centre of Hepatology & Regenerative Medicine", img: hepatologyImg },
+        { name: "Cardiology", img: cardiologyImg },
+        { name: "Cardiothoracic Surgery", img: cardiothoracicImg },
+        { name: "Neurosurgery & Spine Surgery", img: neurosurgeryImg },
+        { name: "Pulmonology", img: pulmonologyImg },
+        { name: "Oncology", img: oncologyImg },
+        { name: "Urology", img: urologyImg },
+        { name: "Nephrology", img: nephrologyImg },
+        { name: "Orthopedics", img: orthopedicsImg },
+        { name: "Rheumatology", img: rheumatologyImg },
+        { name: "Obstetrics and Gynecology", img: gynecologyImg },
+        { name: "Pediatrics", img: pediatricsImg },
+        { name: "Neurology", img: neurologyImg },
+        { name: "Psychiatry", img: psychiatryImg },
+        { name: "Endocrinology", img: endocrinologyImg },
+        { name: "Dermatology", img: dermatologyImg }
     ];
 
+    // Horizontal scrolling with mouse movement
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (scrollRef.current) {
-                scrollRef.current.scrollBy({
-                    left: 300,
-                    behavior: 'smooth'
+        const handleMouseMove = (e) => {
+            const { clientX } = e;
+            const container = scrollRef.current;
+            if (container) {
+                const { offsetWidth, scrollWidth } = container;
+                const maxScrollLeft = scrollWidth - offsetWidth;
+                const scrollX = (clientX / window.innerWidth) * maxScrollLeft;
+                container.scrollTo({
+                    left: scrollX,
+                    behavior: 'smooth',
                 });
             }
-        }, 2000);
+        };
 
-        return () => clearInterval(interval);
+        const container = scrollRef.current;
+        if (container) {
+            container.addEventListener('mousemove', handleMouseMove);
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener('mousemove', handleMouseMove);
+            }
+        };
     }, []);
 
-    return ( <
-        section id = "services"
-        className = "services" >
-        <
-        h2 className = "section-title" > Centres of Excellence < /h2> <
-        p className = "section-description" >
-        Depth and expertise define our Centers of Excellence in Super Specialty Tertiary Healthcare.
-
-        <
-        /p> <
-        div className = "service-container"
-        ref = { scrollRef } >
-        <
-        div className = "service-list" > {
-            services.map((service, index) => ( <
-                div key = { index }
-                className = "service" >
-                <
-                div className = "icon"
-                style = {
-                    { backgroundImage: `url(${service.png})` }
-                }
-                /> <
-                h3 > { service.name } < /h3> < /
-                div >
-            ))
-        } <
-        /div> < /
-        div > <
-        /section>
+    return (
+        React.createElement('section', { id: "services", className: "services" },
+            React.createElement('h2', { className: "section-title" }, "Centres of Excellence"),
+            React.createElement('p', { className: "section-description" },
+                "Depth and expertise define our Centers of Excellence in Super Specialty Tertiary Healthcare."
+            ),
+            React.createElement('div', { className: "service-container", ref: scrollRef },
+                React.createElement('div', { className: "service-list" },
+                    services.map((service, index) => (
+                        React.createElement('div', { key: index, className: "service" },
+                            React.createElement('div', {
+                                className: "icon",
+                                style: { backgroundImage: `url(${service.img})` }
+                            }),
+                            React.createElement('h3', null, service.name)
+                        )
+                    ))
+                )
+            )
+        )
     );
 };
 
