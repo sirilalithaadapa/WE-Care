@@ -1,7 +1,6 @@
 .testimonials {
     padding: 50px;
-    background: linear-gradient(to right, #f38d5a, #f7ac86);
-    /* Updated with logo's gradient */
+    background: linear-gradient(to right, #f38d5a, #f69e72);
     font-family: Arial, sans-serif;
 }
 
@@ -10,7 +9,6 @@
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #21476d;
-    /* Updated to deep blue */
 }
 
 
@@ -48,7 +46,6 @@
 .testimonial-name {
     font-size: 1.2em;
     color: #21476d;
-    /* Updated to deep blue */
     margin: 0;
 }
 
@@ -61,7 +58,6 @@
 .testimonial-rating {
     font-size: 1em;
     color: #ffc107;
-    /* Gold color for stars */
     margin: 10px 0;
 }
 
@@ -72,10 +68,33 @@
 }
 
 
+/* View More button styles */
+
+.view-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #21476d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more:hover {
+    background-color: #1b3a5d;
+}
+
+
 /* Mobile view: Stack testimonials vertically */
 
 @media (max-width: 768px) {
     .testimonial-grid {
         grid-template-columns: 1fr;
+    }
+    .view-more {
+        width: 100%;
+        /* Make button full width on mobile */
     }
 }

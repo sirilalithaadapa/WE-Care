@@ -29,10 +29,7 @@ const Navbar = () => {
                 React.createElement('li', null, React.createElement('a', { href: '#gallery' }, 'Gallery')),
                 React.createElement('li', null, React.createElement('a', { href: '#team' }, 'Team'))
             ),
-            React.createElement(
-                'a', { href: '#appointment', className: 'appointment-button' },
-                'Make Appointment'
-            ),
+
             React.createElement(
                 'div', { className: 'hamburger', onClick: toggleMenu },
                 React.createElement('div', {

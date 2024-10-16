@@ -11,16 +11,39 @@
 }
 
 .doctor-card {
+    perspective: 1000px;
+}
+
+.doctor-card .front,
+.doctor-card .back {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100%;
     text-align: center;
-    transition: transform 0.3s;
+    backface-visibility: hidden;
 }
 
-.doctor-card:hover {
-    transform: translateY(-5px);
+.doctor-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.doctor-card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.doctor-card.flipped .back {
+    transform: rotateY(360deg);
 }
 
 .doctor-image {

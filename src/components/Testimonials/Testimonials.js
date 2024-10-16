@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Testimonials.css';
 import patient1 from './patient1.jpg';
 import patient2 from './patient2.jpg';
@@ -15,7 +15,7 @@ const testimonials = [{
     {
         img: patient2,
         name: "Jane Smith",
-        designation: "periodontal",
+        designation: "Periodontal",
         rating: 5,
         text: "WECare Multispeciality Clinic has the best facilities and services. My experience has been wonderful from start to finish."
     },
@@ -36,33 +36,41 @@ const testimonials = [{
 ];
 
 const Testimonials = () => {
+    const [showAll, setShowAll] = useState(false);
+
+    // Handle view more button click
+    const toggleTestimonials = () => {
+        setShowAll(!showAll);
+    };
+
     return ( <
         section className = "testimonials" >
         <
         h2 > Patient Testimonials < /h2> <
         div className = "testimonial-grid" > {
-            testimonials.map((testimonial, index) => ( <
+            testimonials.slice(0, showAll ? testimonials.length : 2).map((testimonial, index) => ( <
                 div key = { index }
                 className = "testimonial-item" >
                 <
                 img src = { testimonial.img }
                 alt = { testimonial.name }
-                className = "testimonial-photo" /
-                >
+                className = "testimonial-photo" / >
                 <
                 div className = "testimonial-details" >
                 <
                 h4 className = "testimonial-name" > { testimonial.name } < /h4> <
                 p className = "testimonial-designation" > { testimonial.designation } < /p> <
-                div className = "testimonial-rating" > { "★".repeat(testimonial.rating) } { "☆".repeat(5 - testimonial.rating) } <
+                div className = "testimonial-rating" > { '★'.repeat(testimonial.rating) } { '☆'.repeat(5 - testimonial.rating) } < /div> <
+                p className = "testimonial-text" > { testimonial.text } < /p> <
                 /div> <
-                p className = "testimonial-text" > { testimonial.text } < /p> < /
-                div > <
                 /div>
             ))
         } <
-        /div> < /
-        section >
+        /div> <
+        button className = "view-more"
+        onClick = { toggleTestimonials } > { showAll ? 'View Less' : 'View More' } <
+        /button> <
+        /section>
     );
 };
 

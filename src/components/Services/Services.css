@@ -1,20 +1,27 @@
 .services {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #f6f6f6;
+    padding: 60px 20px;
+    /* Increased padding for more space */
+    background-color: #f0f8ff;
+    /* Light blue background */
 }
 
 .section-title {
-    font-size: 2em;
-    color: #21476d;
-    /* Updated to deep blue */
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    /* Increased font size */
+    color: #003366;
+    /* Dark blue */
+    margin-bottom: 20px;
+    /* More space between title and description */
 }
 
 .section-description {
-    font-size: 1.2em;
-    color: #242424;
-    margin-bottom: 40px;
+    font-size: 1.3em;
+    /* Slightly larger font */
+    color: #666;
+    /* Medium grey */
+    margin-bottom: 50px;
+    /* More space before services */
 }
 
 .service-container {
@@ -22,119 +29,99 @@
     display: flex;
     justify-content: flex-start;
     scroll-behavior: smooth;
+    padding: 10px 0;
+    /* Add padding for better alignment */
 }
 
 .service-list {
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    /* Increase gap between cards */
     flex-wrap: nowrap;
 }
 
 
-/* Background colors */
-
-.services {
-    background-color: #f0f8ff;
-    /* Light blue background */
-}
-
-.service {
-    background-color: #ffffff;
-    /* White for service cards */
-    border: 1px solid #e0e0e0;
-    /* Light grey border */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.service:hover {
-    background-color: #e6f7ff;
-    /* Lighter blue on hover */
-    transform: translateY(-5px);
-}
-
-.section-title {
-    color: #003366;
-    /* Dark blue */
-}
-
-.section-description {
-    color: #666;
-    /* Medium grey */
-}
+/* Service Card Styles */
 
 .service {
     background-color: white;
+    border: 1px solid #e0e0e0;
     border-radius: 20px;
-    padding: 20px;
-    min-width: 180px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    padding: 25px;
+    /* Increase padding for larger cards */
+    min-width: 200px;
+    /* Increase minimum width */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Smooth transitions */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .service:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    /* Enhanced hover effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Darker shadow on hover */
+    background-color: #e6f7ff;
 }
 
 .service .icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    /* Larger icons */
+    height: 70px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    /* More space under icons */
 }
 
 .service h3 {
-    font-size: 1em;
+    font-size: 1.2em;
+    /* Larger font for service names */
     color: #21476d;
-    /* Updated to deep blue */
-    margin-top: 10px;
-    line-height: 1.2;
+    /* Deep blue */
+    margin-top: 15px;
+    line-height: 1.4;
+    /* Improved line spacing */
 }
 
 
-/* Mobile view */
+/* Mobile View Adjustments */
 
 @media (max-width: 768px) {
     .service-container {
-        padding: 0 10px;
+        padding: 0 15px;
+        /* Adjust padding for smaller screens */
     }
     .service-list {
-        gap: 10px;
+        gap: 15px;
     }
     .service {
-        min-width: 140px;
-        padding: 10px;
-    }
-    .service .icon {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-
-/* Desktop view */
-
-@media (min-width: 769px) {
-    .service-container {
-        display: flex;
-        justify-content: space-around;
-        padding: 0 50px;
-        overflow-x: hidden;
-    }
-    .service-list {
-        gap: 20px;
-        flex-wrap: nowrap;
-    }
-    .service {
-        min-width: 180px;
-        padding: 20px;
+        min-width: 160px;
+        /* Increase minimum width for mobile view */
+        padding: 15px;
+        /* Keep padding moderate */
     }
     .service .icon {
         width: 60px;
         height: 60px;
+    }
+}
+
+
+/* Desktop View Adjustments */
+
+@media (min-width: 769px) {
+    .service-container {
+        padding: 0 60px;
+        /* More padding for wider screens */
+        overflow-x: hidden;
+    }
+    .service-list {
+        gap: 30px;
     }
 }

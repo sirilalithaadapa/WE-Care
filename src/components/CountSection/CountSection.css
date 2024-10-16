@@ -2,70 +2,82 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px;
+    /* Reduced padding */
     background-color: #f9f9f9;
     border-top: 2px solid #ddd;
-    /* Add top border to the entire section */
     border-bottom: 2px solid #ddd;
-    /* Add bottom border to the entire section */
+    flex-wrap: wrap;
+    /* Allow wrapping for better responsiveness */
 }
 
 .count-box {
     text-align: center;
-    width: 100%;
-    padding: 20px;
-    position: relative;
-    /* Ensure relative positioning */
-    border-right: 2px solid #ddd;
-    /* Add right border to each box */
+    width: calc(20% - 16px);
+    /* Adjusted width for a more compact layout */
+    margin: 8px;
+    /* Reduced margin around boxes */
+    padding: 16px;
+    /* Reduced padding */
+    background-color: white;
+    /* White background for contrast */
+    border-radius: 8px;
+    /* Slightly smaller border radius */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+    transition: transform 0.3s;
+    /* Transition effect on hover */
 }
 
-.count-box:last-child {
-    border-right: none;
-    /* Remove right border from the last box */
+.count-box:hover {
+    transform: translateY(-4px);
+    /* Slight lift effect on hover */
 }
 
 .count-icon {
-    font-size: 3rem;
-    /* Adjust icon size */
-    color: #aaa;
-    /* Grey color for the icons */
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    /* Adjusted icon size */
+    color: #3498db;
+    /* Attractive color for icons */
+    margin-bottom: 10px;
+    /* Reduced margin */
 }
 
 .count {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    /* Slightly smaller font size for numbers */
     font-weight: bold;
     color: #e74c3c;
     /* Red color for the numbers */
 }
 
 .count span {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    /* Match span font size with count */
 }
 
 .count-box p {
-    margin-top: 10px;
-    font-size: 1.2rem;
+    margin-top: 8px;
+    /* Reduced top margin */
+    font-size: 1rem;
+    /* Slightly smaller font size */
     color: #666;
+    /* Grey color for text */
 }
 
 @media (max-width: 768px) {
     .count-section {
         flex-direction: column;
+        /* Stack items vertically on small screens */
         border: none;
         /* Remove borders for mobile view */
+        align-items: center;
+        /* Center items */
     }
     .count-box {
         width: 80%;
-        border: none;
-        /* Remove borders for mobile view */
-        margin-bottom: 20px;
-        border-bottom: 2px solid #ddd;
-        /* Add bottom border to each box in mobile */
-    }
-    .count-box:last-child {
-        border-bottom: none;
-        /* Remove bottom border from last box in mobile */
+        /* Full width for mobile */
+        margin-bottom: 15px;
+        /* Space between boxes */
     }
 }
