@@ -1,92 +1,80 @@
 .services {
     text-align: center;
-    padding: 60px 20px;
-    /* Increased padding for more space */
-    background-color: #f0f8ff;
-    /* Light blue background */
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e6f7ff 0%, #cceeff 100%);
+    /* Soft blue gradient for a calming effect */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .section-title {
     font-size: 2.5em;
-    /* Increased font size */
     color: #003366;
-    /* Dark blue */
     margin-bottom: 20px;
-    /* More space between title and description */
 }
 
 .section-description {
     font-size: 1.3em;
-    /* Slightly larger font */
     color: #666;
-    /* Medium grey */
     margin-bottom: 50px;
-    /* More space before services */
 }
 
 .service-container {
-    overflow-x: auto;
     display: flex;
+    overflow-x: auto;
     justify-content: flex-start;
     scroll-behavior: smooth;
     padding: 10px 0;
-    /* Add padding for better alignment */
 }
 
 .service-list {
     display: flex;
-    gap: 30px;
-    /* Increase gap between cards */
+    gap: 20px;
     flex-wrap: nowrap;
 }
 
 
-/* Service Card Styles */
+/* Service Box Styles */
 
 .service {
     background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
-    padding: 25px;
-    /* Increase padding for larger cards */
-    min-width: 200px;
-    /* Increase minimum width */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    /* Stronger shadow */
+    border: 2px solid #d9eaf7;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    /* Box is now square */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Smooth transitions */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .service:hover {
     transform: translateY(-10px);
-    /* Enhanced hover effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    /* Darker shadow on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     background-color: #e6f7ff;
 }
 
 .service .icon {
-    width: 70px;
-    /* Larger icons */
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-bottom: 20px;
-    /* More space under icons */
+    margin-bottom: 10px;
+    filter: invert(32%) sepia(92%) saturate(4094%) hue-rotate(192deg) brightness(100%) contrast(101%);
+    /* Blue color filter */
 }
 
 .service h3 {
-    font-size: 1.2em;
-    /* Larger font for service names */
-    color: #21476d;
-    /* Deep blue */
-    margin-top: 15px;
-    line-height: 1.4;
-    /* Improved line spacing */
+    font-size: 1em;
+    color: orange;
+    /* Updated text color */
+    margin-top: 10px;
 }
 
 
@@ -95,20 +83,19 @@
 @media (max-width: 768px) {
     .service-container {
         padding: 0 15px;
-        /* Adjust padding for smaller screens */
     }
     .service-list {
         gap: 15px;
     }
     .service {
-        min-width: 160px;
-        /* Increase minimum width for mobile view */
+        width: 120px;
+        height: 120px;
+        /* Square for mobile */
         padding: 15px;
-        /* Keep padding moderate */
     }
     .service .icon {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -118,10 +105,19 @@
 @media (min-width: 769px) {
     .service-container {
         padding: 0 60px;
-        /* More padding for wider screens */
         overflow-x: hidden;
     }
     .service-list {
         gap: 30px;
+    }
+    .service {
+        width: 180px;
+        height: 180px;
+        /* Larger square for desktop */
+        padding: 20px;
+    }
+    .service .icon {
+        width: 70px;
+        height: 70px;
     }
 }

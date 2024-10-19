@@ -43,34 +43,36 @@ const Testimonials = () => {
         setShowAll(!showAll);
     };
 
-    return ( <
-        section className = "testimonials" >
-        <
-        h2 > Patient Testimonials < /h2> <
-        div className = "testimonial-grid" > {
-            testimonials.slice(0, showAll ? testimonials.length : 2).map((testimonial, index) => ( <
-                div key = { index }
-                className = "testimonial-item" >
-                <
-                img src = { testimonial.img }
-                alt = { testimonial.name }
-                className = "testimonial-photo" / >
-                <
-                div className = "testimonial-details" >
-                <
-                h4 className = "testimonial-name" > { testimonial.name } < /h4> <
-                p className = "testimonial-designation" > { testimonial.designation } < /p> <
-                div className = "testimonial-rating" > { '★'.repeat(testimonial.rating) } { '☆'.repeat(5 - testimonial.rating) } < /div> <
-                p className = "testimonial-text" > { testimonial.text } < /p> <
-                /div> <
-                /div>
-            ))
-        } <
-        /div> <
-        button className = "view-more"
-        onClick = { toggleTestimonials } > { showAll ? 'View Less' : 'View More' } <
-        /button> <
-        /section>
+    return React.createElement(
+        'section', { className: 'testimonials' },
+        React.createElement('h2', null, 'Patient Testimonials'),
+        React.createElement(
+            'div', { className: 'testimonial-grid' },
+            testimonials.slice(0, showAll ? testimonials.length : 2).map((testimonial, index) =>
+                React.createElement(
+                    'div', { key: index, className: 'testimonial-item' },
+                    React.createElement('img', {
+                        src: testimonial.img,
+                        alt: testimonial.name,
+                        className: 'testimonial-photo'
+                    }),
+                    React.createElement(
+                        'div', { className: 'testimonial-details' },
+                        React.createElement('h4', { className: 'testimonial-name' }, testimonial.name),
+                        React.createElement('p', { className: 'testimonial-designation' }, testimonial.designation),
+                        React.createElement('div', { className: 'testimonial-rating' },
+                            '★'.repeat(Math.floor(testimonial.rating)) +
+                            '☆'.repeat(5 - Math.floor(testimonial.rating))
+                        ),
+                        React.createElement('p', { className: 'testimonial-text' }, testimonial.text)
+                    )
+                )
+            )
+        ),
+        React.createElement(
+            'button', { className: 'view-more', onClick: toggleTestimonials },
+            showAll ? 'View Less' : 'View More'
+        )
     );
 };
 

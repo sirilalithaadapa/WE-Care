@@ -2,9 +2,12 @@
 
 .home {
     padding: 0;
+    margin: 0;
+    /* Removed any margin or padding that caused white space */
     text-align: center;
     background-color: #f0f4f8;
     overflow-x: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -13,14 +16,12 @@
 .hero-section {
     position: relative;
     width: 100%;
-    height: 50vh;
-    text-align: center;
-    margin: 0;
-    /* Removed bottom margin */
+    height: 60vh;
+    /* Increased height for better visibility */
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start;
+    /* Change this to align items at the start */
 }
 
 .hero-image {
@@ -32,126 +33,39 @@
 
 .hero-text {
     position: absolute;
-    top: 50%;
+    top: 20px;
+    /* Adjust the distance from the top as needed */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
     color: #fff;
-    z-index: 1;
 }
 
 .hero-text h1 {
     font-size: 42px;
     font-weight: bold;
-    margin-bottom: 10px;
     color: #21349b;
-    /* Bright blue */
     text-shadow: 2px 2px 3px rgba(206, 126, 35, 0.56);
-    /* Strong shadow for depth */
 }
 
 .hero-text p {
     font-size: 30px;
     color: #21349b;
-    /* Steel blue */
     text-shadow: 1px 1px 1px rgba(162, 92, 45, 0.63);
-    /* Subtle shadow */
-}
-
-
-/* Action Buttons for Booking and Opinion */
-
-.action-btn {
-    padding: 10px 20px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    display: inline-block;
-    margin: 0;
-    /* Removed margin */
-}
-
-.action-btn:hover {
-    background-color: #e64a19;
-}
-
-
-/* Info Section */
-
-.info-slider {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* Center align boxes */
-    padding: 15px;
-    /* Reduced padding */
-    background-color: #fff;
-    margin: 0;
-    /* Added margin 0 */
-}
-
-.info-box {
-    padding: 5px 10px;
-    /* Reduced vertical padding */
-    border-radius: 10px;
-    text-align: left;
-    background-color: #007bff;
-    /* Blue background */
-    color: white;
-    /* White text */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    flex: 1 1 100px;
-    /* Set a smaller base size */
-    margin: 5px;
-    /* Reduced margin between boxes */
-    min-width: 50px;
-    /* Minimum width for the boxes */
-    min-height: 50px;
-    /* Set a minimum height for boxes to ensure uniformity */
-}
-
-.info-box h2 {
-    font-size: 20px;
-    /* Reduced font size */
-    margin-bottom: 5px;
-    /* Reduced margin */
-    color: #fa9e82;
-    /* Set text color */
-}
-
-.info-box:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Map Container */
-
-.map-container {
-    margin: 15px 0;
-    /* Reduced margin top, bottom */
 }
 
 
 /* Responsive for Mobile */
 
-@media (max-width: 992px) {
-    .info-slider {
-        flex-direction: column;
-        /* Stack boxes vertically on smaller screens */
-    }
-}
-
 @media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+        /* Adjust height for mobile */
+    }
     .hero-text h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
     .hero-text p {
-        font-size: 18px;
+        font-size: 16px;
     }
 }

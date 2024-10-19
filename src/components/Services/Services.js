@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Services.css';
 
-// Import images (ensure images are placed in the public folder or imported correctly)
+// Import your image files
 import gastroImg from './gastro.png';
 import surgicalGastroImg from './surgical-gastro.png';
 import hepatologyImg from './hepatology.png';
@@ -24,6 +24,7 @@ import dermatologyImg from './dermatology.png';
 const Services = () => {
     const scrollRef = useRef(null);
 
+    // List of services and corresponding image imports
     const services = [
         { name: "Medical Gastroenterology", img: gastroImg },
         { name: "Surgical Gastroenterology", img: surgicalGastroImg },
@@ -45,7 +46,7 @@ const Services = () => {
         { name: "Dermatology", img: dermatologyImg }
     ];
 
-    // Horizontal scrolling with mouse movement
+    // Mouse scroll interaction
     useEffect(() => {
         const handleMouseMove = (e) => {
             const { clientX } = e;
@@ -73,23 +74,30 @@ const Services = () => {
         };
     }, []);
 
-    return (
-        React.createElement('section', { id: "services", className: "services" },
-            React.createElement('h2', { className: "section-title" }, "Centres of Excellence"),
-            React.createElement('p', { className: "section-description" },
-                "Depth and expertise define our Centers of Excellence in Super Specialty Tertiary Healthcare."
-            ),
-            React.createElement('div', { className: "service-container", ref: scrollRef },
-                React.createElement('div', { className: "service-list" },
-                    services.map((service, index) => (
-                        React.createElement('div', { key: index, className: "service" },
-                            React.createElement('div', {
-                                className: "icon",
-                                style: { backgroundImage: `url(${service.img})` }
-                            }),
-                            React.createElement('h3', null, service.name)
-                        )
-                    ))
+    return React.createElement(
+        'section', { id: 'services', className: 'services' },
+        React.createElement('h2', { className: 'section-title' }, 'Centres of Excellence'),
+        React.createElement('p', { className: 'section-description' },
+            'Depth and expertise define our Centers of Excellence in Super Specialty Tertiary Healthcare.'
+        ),
+        React.createElement(
+            'div', { className: 'service-container', ref: scrollRef },
+            React.createElement(
+                'div', { className: 'service-list' },
+                services.map((service, index) =>
+                    React.createElement(
+                        'div', { key: index, className: 'service' },
+                        React.createElement(
+                            'div', {
+                                className: 'icon',
+                                style: {
+                                    backgroundImage: `url(${service.img})`,
+                                    filter: 'hue-rotate(180deg) saturate(200%)'
+                                }
+                            }
+                        ),
+                        React.createElement('h3', null, service.name)
+                    )
                 )
             )
         )

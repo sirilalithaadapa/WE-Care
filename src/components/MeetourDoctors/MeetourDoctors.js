@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MeetourDoctors.css';
 import doctor1Image from './Dr. Vijaya Sree.jpeg';
 import doctor2Image from './Dr. Mahmood Pasha.jpg';
@@ -27,53 +27,40 @@ const doctorsData = [{
     }
 ];
 
-const DoctorCard = ({ doctor, isFlipped, onClick }) => {
-    return ( <
-        div className = { `doctor-card ${isFlipped ? 'flipped' : ''}` }
-        onClick = { onClick } >
-        <
-        div className = "front" >
-        <
-        img src = { doctor.image }
-        alt = { doctor.name }
-        className = "doctor-image" / >
-        <
-        h3 > { doctor.name } < /h3> <
-        p > { doctor.specialty } < /p> <
-        p > { doctor.qualification } < /p> <
-        /div> <
-        div className = "back" >
-        <
-        h3 > { doctor.name } < /h3> <
-        p > Treats: { doctor.diseases } < /p> <
-        /div> <
-        /div>
+const DoctorCard = ({ doctor }) => {
+    return React.createElement(
+        'div', { className: 'doctor-card' },
+        React.createElement('img', {
+            src: doctor.image,
+            alt: doctor.name,
+            className: 'doctor-image'
+        }),
+        React.createElement(
+            'div', { className: 'doctor-info' },
+            React.createElement('h3', null, doctor.name),
+            React.createElement('p', null, doctor.specialty),
+            React.createElement('p', null, doctor.qualification),
+            React.createElement(
+                'div', { className: 'diseases' },
+                React.createElement('p', null,
+                    React.createElement('strong', null, 'Treats: '),
+                    doctor.diseases
+                )
+            )
+        )
     );
 };
 
 const MeetourDoctors = () => {
-    const [flippedIndex, setFlippedIndex] = useState(null);
-
-    const handleCardClick = (index) => {
-        setFlippedIndex(index === flippedIndex ? null : index); // Toggle flip state
-    };
-
-    return ( <
-        section className = "meet-our-doctors" >
-        <
-        h2 > Meet Our Doctors < /h2> <
-        div className = "doctor-list" > {
-            doctorsData.map((doctor, index) => ( <
-                DoctorCard key = { index }
-                doctor = { doctor }
-                isFlipped = { flippedIndex === index }
-                onClick = {
-                    () => handleCardClick(index) }
-                />
-            ))
-        } <
-        /div> <
-        /section>
+    return React.createElement(
+        'section', { className: 'meet-our-doctors' },
+        React.createElement('h2', null, 'Meet Our Doctors'),
+        React.createElement(
+            'div', { className: 'doctor-list' },
+            doctorsData.map((doctor, index) =>
+                React.createElement(DoctorCard, { key: index, doctor })
+            )
+        )
     );
 };
 

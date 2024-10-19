@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Services from './components/Services/Services';
-import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Testimonials from './components/Testimonials/Testimonials';
@@ -12,27 +11,16 @@ import CountSection from './components/CountSection/CountSection'; // Import the
 import './App.css';
 
 function App() {
-    return ( <
-        div className = "App" >
-        <
-        Navbar / >
-        <
-        Home / >
-        <
-        About / >
-        <
-        CountSection / > { /* Add CountSection component here */ } <
-        MeetourDoctors / >
-        <
-        Services / >
-        <
-        Testimonials / >
-        <
-        Contact / >
-        <
-        Footer / >
-        <
-        /div>
+    return React.createElement(
+        'div', { className: 'App' },
+        React.createElement(Navbar),
+        React.createElement(Home),
+        React.createElement(Services),
+        React.createElement(CountSection),
+        React.createElement(MeetourDoctors),
+        React.createElement(Testimonials),
+        React.createElement(Contact),
+        React.createElement(Footer)
     );
 }
 

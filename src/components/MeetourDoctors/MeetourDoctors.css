@@ -1,72 +1,133 @@
+/* Base Styles */
+
 .meet-our-doctors {
-    padding: 2rem;
-    background-color: #f9f9f9;
+    padding: 20px;
+    background-color: #e6f7ff;
+    /* Change to your desired background color */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Base font */
+    color: #333;
+    /* Text color */
+}
+
+h2 {
+    font-size: 35px;
+    /* Default heading size */
+    margin-bottom: 20px;
+    /* Spacing below the heading */
     text-align: center;
+    /* Center the heading */
+    font-weight: bold;
+    /* Make heading bold */
+    color: #1c4370;
+    /* Heading color */
 }
 
 .doctor-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .doctor-card {
-    perspective: 1000px;
-}
-
-.doctor-card .front,
-.doctor-card .back {
     background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    /* Card background color */
+    border: 1px solid #ddd;
+    /* Card border */
+    border-radius: 8px;
+    width: 250px;
+    /* Set a fixed width for larger screens */
+    margin: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    height: 100%;
-    text-align: center;
-    backface-visibility: hidden;
+    /* For positioning the disease info */
 }
 
-.doctor-card .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.doctor-card.flipped .front {
-    transform: rotateY(180deg);
-}
-
-.doctor-card.flipped .back {
-    transform: rotateY(360deg);
+.doctor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .doctor-image {
     width: 100%;
+    /* Responsive image */
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
-h3 {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.4rem;
+.doctor-info {
+    padding: 15px;
 }
 
-p {
-    margin: 0.3rem 0;
+.doctor-info h3 {
+    font-size: 20px;
+    /* Doctor name size */
+    margin: 0;
+    /* Remove default margin */
+    color: #333;
+    /* Doctor name color */
+}
+
+.doctor-info p {
+    font-size: 14px;
+    /* Specialty and qualification size */
+    margin: 5px 0;
+    /* Margin for spacing between paragraphs */
+    color: #666;
+    /* Specialty and qualification color */
+}
+
+.diseases {
+    display: none;
+    /* Initially hidden */
+    font-size: 14px;
+    /* Size for diseases */
+}
+
+.doctor-card:hover .diseases {
+    display: block;
+    /* Show diseases info on hover */
+    margin-top: 10px;
+    color: #555;
+    /* Text color for diseases */
 }
 
 
-/* Mobile View */
+/* Mobile Styles */
 
-@media only screen and (max-width: 600px) {
-    .doctor-list {
-        grid-template-columns: 1fr;
+@media (max-width: 600px) {
+    .doctor-card {
+        width: 90%;
+        /* Use a larger width for smaller screens */
+        margin: 10px auto;
+        /* Center the cards with auto margins */
+    }
+    h2 {
+        font-size: 24px;
+        /* Adjust heading size for mobile */
+    }
+    .doctor-info h3 {
+        font-size: 18px;
+        /* Smaller doctor name size for mobile */
+    }
+    .doctor-info p {
+        font-size: 12px;
+        /* Smaller specialty and qualification size for mobile */
+    }
+}
+
+
+/* Desktop Styles */
+
+@media (min-width: 601px) {
+    .doctor-card {
+        width: 250px;
+        /* Fixed width for desktop */
+    }
+    h2 {
+        font-size: 28px;
+        /* Larger heading size for desktop */
     }
 }
