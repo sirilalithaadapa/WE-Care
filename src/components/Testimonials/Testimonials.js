@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Testimonials.css';
 import patient1 from './patient1.jpg';
 import patient2 from './patient2.jpg';
@@ -36,19 +36,30 @@ const testimonials = [{
 ];
 
 const Testimonials = () => {
-    const [showAll, setShowAll] = useState(false);
+    const scrollRef = useRef(null);
 
-    // Handle view more button click
-    const toggleTestimonials = () => {
-        setShowAll(!showAll);
-    };
+    // Scroll automation
+    useEffect(() => {
+        const scroll = () => {
+            if (scrollRef.current) {
+                scrollRef.current.scrollLeft += 1;
+                if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth - scrollRef.current.clientWidth) {
+                    scrollRef.current.scrollLeft = 0; // Loop back to the start
+                }
+            }
+        };
+
+        const interval = setInterval(scroll, 30);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return React.createElement(
         'section', { className: 'testimonials' },
         React.createElement('h2', null, 'Patient Testimonials'),
         React.createElement(
-            'div', { className: 'testimonial-grid' },
-            testimonials.slice(0, showAll ? testimonials.length : 2).map((testimonial, index) =>
+            'div', { className: 'testimonial-grid', ref: scrollRef },
+            testimonials.map((testimonial, index) =>
                 React.createElement(
                     'div', { key: index, className: 'testimonial-item' },
                     React.createElement('img', {
@@ -60,7 +71,8 @@ const Testimonials = () => {
                         'div', { className: 'testimonial-details' },
                         React.createElement('h4', { className: 'testimonial-name' }, testimonial.name),
                         React.createElement('p', { className: 'testimonial-designation' }, testimonial.designation),
-                        React.createElement('div', { className: 'testimonial-rating' },
+                        React.createElement(
+                            'div', { className: 'testimonial-rating' },
                             '★'.repeat(Math.floor(testimonial.rating)) +
                             '☆'.repeat(5 - Math.floor(testimonial.rating))
                         ),
@@ -68,10 +80,6 @@ const Testimonials = () => {
                     )
                 )
             )
-        ),
-        React.createElement(
-            'button', { className: 'view-more', onClick: toggleTestimonials },
-            showAll ? 'View Less' : 'View More'
         )
     );
 };

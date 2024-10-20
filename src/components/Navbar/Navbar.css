@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
 }
 
 .top-banner a {
@@ -23,10 +24,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: #004d99;
-    /* Darker background to enhance logo contrast */
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo {
@@ -36,23 +36,19 @@
 
 .logo img {
     height: 50px;
-    /* Increased size for prominence */
     margin-right: 10px;
     border-radius: 50%;
-    /* Optional: Adds a rounded effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow to highlight the logo */
     background-color: white;
-    /* Background to improve contrast */
     padding: 5px;
-    /* Padding around the logo */
 }
 
 .navbar h1 {
-    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+    /* Changed from Pacifico to Playfair Display */
+    font-size: 1.8em;
     margin: 0;
-    color: #ffffff;
-    /* White text to match the navbar background */
+    color: #f9a825;
 }
 
 .nav-links {
@@ -68,31 +64,39 @@
 .nav-links a {
     text-decoration: none;
     color: #ffffff;
-    /* White links for better contrast */
     font-size: 1em;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #f9a825;
-    /* Highlight links on hover */
-}
-
-.appointment-button {
-    background-color: #00c853;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.appointment-button:hover {
-    background-color: #009624;
 }
 
 
-/* Hamburger menu styles */
+/* Search Bar */
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    height: 20px;
+    width: 20px;
+    fill: #ffffff;
+}
+
+.search-bar {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+/* Hamburger menu */
 
 .hamburger {
     display: none;
@@ -100,17 +104,24 @@
     cursor: pointer;
 }
 
-.hamburger div {
+.hamburger .line {
     width: 25px;
     height: 3px;
     background-color: #fff;
-    /* White for visibility on dark navbar */
     margin: 5px 0;
     transition: 0.4s;
 }
 
+.hamburger .line.hidden {
+    opacity: 0;
+}
 
-/* Mobile menu (full screen side menu) */
+.hamburger .line.open {
+    transform: rotate(45deg) translate(-5px, 5px);
+}
+
+
+/* Mobile menu */
 
 .nav-links.mobile {
     display: none;
@@ -136,7 +147,7 @@
 }
 
 
-/* Close button styles */
+/* Close button */
 
 .close-button {
     display: flex;
@@ -145,11 +156,10 @@
     font-size: 2em;
     margin-bottom: 20px;
     color: #f9a825;
-    /* Same color as hover links */
 }
 
 
-/* Overlay background when menu is open */
+/* Overlay */
 
 .menu-overlay {
     position: fixed;
@@ -169,7 +179,7 @@
 }
 
 
-/* Responsive styles */
+/* Responsive */
 
 @media (max-width: 768px) {
     .nav-links {
@@ -177,17 +187,6 @@
     }
     .hamburger {
         display: flex;
-    }
-    .appointment-button {
-        display: none;
-    }
-    .navbar {
-        background-color: #003366;
-        /* Adjusted color for mobile */
-    }
-    .logo img {
-        height: 40px;
-        /* Reduced logo size for mobile */
     }
 }
 
