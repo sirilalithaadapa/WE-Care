@@ -1,0 +1,12 @@
+.dot-cursor {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: fixed;
+    /* Use fixed position to make sure it covers the entire page */
+    background-color: black;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 1000;
+}

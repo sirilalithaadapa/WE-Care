@@ -91,8 +91,28 @@
     .service-container {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+        /* Reduce gap for better spacing on mobile */
+        padding: 10px 0;
+        /* Adjust padding to minimize whitespace */
     }
     .service-card {
         width: 100%;
+        /* Make cards full-width */
+        margin-bottom: 20px;
+        /* Add margin between stacked cards */
+    }
+    .section-title {
+        font-size: 2em;
+        /* Reduce font size for titles */
+    }
+    .section-description {
+        font-size: 1.1em;
+        /* Adjust font size for readability */
+    }
+    .service-icon {
+        width: 60px;
+        /* Reduce icon size for mobile */
+        height: 60px;
     }
 }

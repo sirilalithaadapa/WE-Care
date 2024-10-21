@@ -1,15 +1,43 @@
-/* Include this in your HTML head */
+/* General Mobile Styles */
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-/* Updated CSS */
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Ensure all text uses the new font */
+}
+
+
+/* Emergency Box Styles */
 
 .emergency-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Roboto', sans-serif;
-    /* Apply the Google font */
+    width: 90%;
+    /* Make it responsive */
+    margin: 10px auto;
+    /* Center the boxes with margin */
+    padding: 15px;
+    /* Add padding for better touch interaction */
+    border-radius: 8px;
+    /* Rounded corners */
+    background-color: #f9f9f9;
+    /* Light background */
 }
+
+
+/* Hover Effects */
 
 .emergency-box:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media Queries for Further Adjustments */
+
+@media (max-width: 600px) {
+    .emergency-box {
+        padding: 10px;
+        /* Less padding on smaller screens */
+        font-size: 14px;
+        /* Adjust font size for better readability */
+    }
+    /* Additional styling can go here */
 }

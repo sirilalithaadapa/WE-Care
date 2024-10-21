@@ -89,8 +89,66 @@
 /* Mobile view adjustments */
 
 @media (max-width: 768px) {
+    .testimonials {
+        padding: 30px;
+        /* Adjust padding for smaller screens */
+    }
+    .testimonials h2 {
+        font-size: 2em;
+        /* Reduce font size of heading */
+    }
     .testimonial-item {
-        flex: 0 0 250px;
+        flex: 0 0 220px;
         /* Smaller size for mobile */
+        padding: 15px;
+        /* Reduce padding */
+        min-height: 250px;
+        /* Adjust minimum height for smaller items */
+    }
+    .testimonial-photo {
+        width: 60px;
+        height: 60px;
+        /* Reduce photo size */
+    }
+    .testimonial-name {
+        font-size: 1.1em;
+        /* Adjust name font size */
+    }
+    .testimonial-designation,
+    .testimonial-rating,
+    .testimonial-text {
+        font-size: 0.85em;
+        /* Reduce other text sizes */
+    }
+    .testimonial-grid {
+        gap: 15px;
+        /* Reduce gap between items */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials h2 {
+        font-size: 1.8em;
+        /* Further reduce heading size for very small screens */
+    }
+    .testimonial-item {
+        flex: 0 0 200px;
+        /* Even smaller size for very small screens */
+        padding: 10px;
+        min-height: 220px;
+        /* Adjust height */
+    }
+    .testimonial-photo {
+        width: 50px;
+        height: 50px;
+        /* Further reduce photo size */
+    }
+    .testimonial-name {
+        font-size: 1em;
+        /* Smaller name text */
+    }
+    .testimonial-text {
+        font-size: 0.8em;
+        /* Reduce testimonial text size */
     }
 }

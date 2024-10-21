@@ -3,7 +3,7 @@
 .meet-our-doctors {
     padding: 20px;
     background-color: #e6f7ff;
-    /* Change to your desired background color */
+    /* Background color */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* Base font */
     color: #333;
@@ -11,8 +11,8 @@
 }
 
 h2 {
-    font-size: 35px;
-    /* Default heading size */
+    font-size: 30px;
+    /* Default heading size for base */
     margin-bottom: 20px;
     /* Spacing below the heading */
     text-align: center;
@@ -26,7 +26,8 @@ h2 {
 .doctor-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    /* Center doctor cards */
 }
 
 .doctor-card {
@@ -36,8 +37,9 @@ h2 {
     /* Card border */
     border-radius: 8px;
     width: 250px;
-    /* Set a fixed width for larger screens */
+    /* Fixed width for larger screens */
     margin: 15px;
+    /* Margin around cards */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -103,6 +105,8 @@ h2 {
         /* Use a larger width for smaller screens */
         margin: 10px auto;
         /* Center the cards with auto margins */
+        transition: none;
+        /* Remove hover effect for mobile */
     }
     h2 {
         font-size: 24px;
@@ -115,6 +119,17 @@ h2 {
     .doctor-info p {
         font-size: 12px;
         /* Smaller specialty and qualification size for mobile */
+    }
+    /* Add padding for better spacing */
+    .doctor-info {
+        padding: 10px;
+        /* Reduced padding for mobile */
+    }
+    /* Optionally, show diseases info on tap */
+    .doctor-card:focus .diseases,
+    .doctor-card:active .diseases {
+        display: block;
+        /* Show diseases info on tap/click */
     }
 }
 

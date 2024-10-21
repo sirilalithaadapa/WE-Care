@@ -71,7 +71,8 @@ const Contact = () => {
             'div', { className: 'map-container' },
             React.createElement('iframe', {
                 title: "Google Map",
-                src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30383.432089218237!2d76.2721944!3d10.0186576!3m2!1i1024!2i768!4f13.1!4m4!1e1!3m2!1sD5VCJpncBWbjKSwUA!5e0!4m1!5sD5VCJpncBWbjKSwUA",
+                // Use the correct embed link from Google Maps
+                src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345099466!2d144.95373511531566!3d-37.81720997975119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0b26c3%3A0x5045675218ceed1!2sYour%20Location!5e0!3m2!1sen!2sau!4v1612713487391!5m2!1sen!2sau",
                 width: "100%",
                 height: "250",
                 allowFullScreen: "",

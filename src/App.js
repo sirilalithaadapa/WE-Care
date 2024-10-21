@@ -8,13 +8,15 @@ import Testimonials from './components/Testimonials/Testimonials';
 import MeetourDoctors from './components/MeetourDoctors/MeetourDoctors';
 import CountSection from './components/CountSection/CountSection'; // Import the CountSection component
 import EmergencyInfo from './components/EmergencyInfo/EmergencyInfo';
-import Content from './components/Content/Content'
+import Content from './components/Content/Content';
+import DotCursor from './components/DotCursor/DotCursor';
 import './App.css';
 
 function App() {
     return React.createElement(
         'div', { className: 'App' },
         React.createElement(Navbar),
+        React.createElement(DotCursor),
         React.createElement(Home),
         React.createElement(Content),
         React.createElement(Services),
