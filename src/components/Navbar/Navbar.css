@@ -179,6 +179,38 @@
 }
 
 
+/* Phone number styles */
+
+.phone-number {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.phone-number a {
+    text-decoration: none;
+    color: #f9a825;
+    font-weight: bold;
+    margin-left: 8px;
+    transition: color 0.3s ease;
+}
+
+.phone-number a:hover {
+    color: #ffffff;
+}
+
+
+/* Phone icon styles */
+
+.phone-icon {
+    width: 20px;
+    height: 20px;
+    fill: #f9a825;
+    /* Adjust color as needed */
+}
+
+
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -187,6 +219,10 @@
     }
     .hamburger {
         display: flex;
+    }
+    .phone-number {
+        display: none;
+        /* Hide phone number in mobile view */
     }
 }
 

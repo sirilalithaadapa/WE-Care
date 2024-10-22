@@ -1,23 +1,21 @@
 import React from 'react';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 import './Home.css';
 
-// Importing image
-import slide1 from './hero-bg.png';
+// Importing images
+import slide1 from './hero-bg2.png';
+import slide2 from './hero-bg.png';
 
 const Home = () => {
     return React.createElement(
         'section', { id: 'home', className: 'home' },
-        React.createElement(
-            'div', { className: 'hero-section' },
-            React.createElement('img', {
-                src: slide1,
-                alt: 'Welcome to WeCare Hospital',
-                className: 'hero-image'
-            }),
-            React.createElement(
-                'div', { className: 'hero-text' },
-                React.createElement('h1', null, 'Welcome to WeCare Hospital'),
-                React.createElement('p', null, 'We provide high-quality healthcare services')
+        React.createElement(AwesomeSlider, { className: 'hero-slider', animation: 'none' },
+            React.createElement('div', { 'data-src': slide1 },
+
+            ),
+            React.createElement('div', { 'data-src': slide2 },
+
             )
         )
     );

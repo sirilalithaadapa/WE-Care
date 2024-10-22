@@ -5,29 +5,27 @@
     margin: 0;
     text-align: center;
     background-color: #f0f4f8;
-    overflow-x: hidden;
+    overflow: hidden;
+    /* Ensures no scrollbar appears */
     font-family: 'Roboto', sans-serif;
-    /* Updated font family */
 }
 
 
-/* Hero Section */
+/* Hero Section with React Awesome Slider */
 
-.hero-section {
-    position: relative;
+.hero-slider {
     width: 100%;
     height: 60vh;
-    /* Initial height for larger screens */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    /* Prevents scrolling during the transition */
 }
 
-.hero-image {
-    width: 100%;
+.hero-slider div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 .hero-text {
@@ -39,62 +37,17 @@
     color: #fff;
 }
 
-.hero-text h1 {
-    font-size: 42px;
-    font-weight: bold;
-    color: #21349b;
-    text-shadow: 2px 2px 3px rgba(206, 126, 35, 0.56);
-}
-
-.hero-text p {
-    font-size: 30px;
-    color: #21349b;
-    text-shadow: 1px 1px 1px rgba(162, 92, 45, 0.63);
-}
-
 
 /* Responsive for Mobile */
 
 @media (max-width: 768px) {
-    .hero-section {
+    .hero-slider {
         height: 50vh;
-        /* Reduced height for mobile */
     }
-    .hero-text {
-        padding: 0 10px;
-        /* Add some horizontal padding for text */
-    }
-    .hero-text h1 {
-        font-size: 28px;
-        /* Adjusted font size for mobile */
-    }
-    .hero-text p {
-        font-size: 16px;
-        /* Adjusted font size for mobile */
-    }
-    /* Additional styles for better mobile experience */
-    .hero-text h1,
-    .hero-text p {
-        line-height: 1.2;
-        /* Improved readability */
-    }
-    /* Add styles for buttons or other elements if necessary */
 }
 
-
-/* Additional media queries for smaller screens, if needed */
-
 @media (max-width: 480px) {
-    .hero-section {
+    .hero-slider {
         height: 40vh;
-        /* Further reduce height for very small screens */
-    }
-    .hero-text h1 {
-        font-size: 24px;
-        /* Further adjust font size */
-    }
-    .hero-text p {
-        font-size: 14px;
-        /* Further adjust font size */
     }
 }
